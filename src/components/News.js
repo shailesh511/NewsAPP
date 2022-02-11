@@ -38,12 +38,6 @@ export default class News extends Component {
 
     handleNextChange= async ()=>{
 
-     if(this.state.page+1>Math.ceil(this.state.totalResults/20))
-     {
-
-     }
-
-else{
         let url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=a7cc2aafcf3447dcb49481b0367c6607&page=${this.state.page+1}&pageSize=20`;
         let data = await fetch(url);
         let parsedData=await data.json();
@@ -54,12 +48,12 @@ else{
             articles:parsedData.articles
         })
     }
-}
+
     render() {
     return (
         <div className="container">
-            <h3>Top Trending News </h3>
-            <div className="row">
+            <h1 className="text-center my-3">Top Trending News </h1>
+            <div className="row my-3">
                 {
                     this.state.articles.map((element)=>{
                     return <div className="col-md-4" key={element.url}>
@@ -70,7 +64,7 @@ else{
 
                <div class="container d-flex justify-content-between">
                <button disabled={this.state.page<=1} type="button" className="btn btn-dark" onClick={this.handlePrevChange}> &larr; Previous</button>
-               <button type="button" className="btn btn-dark" onClick={this.handleNextChange}>Next &rarr; </button>
+               <button  disabled={this.state.page+1>Math.ceil(this.state.totalResults/20)} type="button" className="btn btn-dark" onClick={this.handleNextChange}>Next &rarr; </button>
 
                </div>
 
