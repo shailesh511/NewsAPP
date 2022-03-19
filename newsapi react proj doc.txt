@@ -1,0 +1,9 @@
+News app.
+
+->Adding prev and next button
+   * use flex(bootstrap class to distance prev and next buttons)
+          <div class="d-flex justify-content-between">...</div>
+
+   * use html syntax for showing arrow &larr; and &rarr;  .
+   *  use disabled property for disabling buttons
+-> Now set onclick on both the buttons handleNext and handlePrev
