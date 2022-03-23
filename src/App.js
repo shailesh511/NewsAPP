@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Router, Routes } from 'react-router'
+import { Route, Routes } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 import Navbar from './components/Navbar'
@@ -8,7 +8,7 @@ import News from './components/News'
 
 export default class App extends Component {
 
-  apiKey=process.env.REACT_APP_API;
+  //apiKey=process.env.REACT_APP_API;
 
    state={
      progress:0
